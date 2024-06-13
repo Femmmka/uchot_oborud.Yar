@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using uchot_oborud.Yar.Models;
 
 namespace uchot_oborud.Yar
 {
@@ -20,9 +21,19 @@ namespace uchot_oborud.Yar
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow init;
+        public Users ActiveUser = new Users();
         public MainWindow()
         {
             InitializeComponent();
+            OpenPages(new Pages.Authentication());
+            init = this;
         }
+
+        public void OpenPages(Page Page)
+        {
+            frame.Navigate(Page);
+        }
+
     }
 }
