@@ -17,8 +17,8 @@
             <TextBox x:Name="Name" Height="25" Grid.Column="1" Margin="10,41,10,0" VerticalAlignment="Top" IsEnabled="False"/>
             <Label Content="Шифр аудитории:" Grid.Column="1" VerticalAlignment="Top" Margin="10,83,10,0"/>
             <TextBox x:Name="Code" Height="25" Grid.Column="1" Margin="10,113,11,0" VerticalAlignment="Top" IsEnabled="False"/>
-            <Button x:Name="Edit" Click="EditRecord" Content="Изменить" Height="25" Margin="10,147,0,0" Background="Gray" Foreground="White" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.492,0.544" HorizontalAlignment="Left" Width="82" />
-            <Button x:Name="Delete" Click="DeleteRecord" Content="Удалить" Height="25" Margin="10,147,10,10" Background="Gray" Foreground="White" VerticalAlignment="Top" />
+            <Button x:Name="Edit" Click="EditRecord" Content="Изменить" Height="25" Margin="10,147,0,0" Background="#0060AC" Foreground="White" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.492,0.544" HorizontalAlignment="Left" Width="82" />
+            <Button x:Name="Delete" Click="DeleteRecord" Content="Удалить" Height="25" Margin="10,147,10,10" Background="#E41613" Foreground="White" VerticalAlignment="Top" />
         </Grid>
 
     </Grid>

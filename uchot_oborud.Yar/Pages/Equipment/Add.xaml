@@ -23,7 +23,7 @@
             <TextBox x:Name="price" Height="25" Grid.Column="2" Margin="10,97,10,0" VerticalAlignment="Top"/>
             <Label Content="Стоимость: *" Grid.Column="2" VerticalAlignment="Top" Margin="10,71,10,0" Height="26"/>
             <Label Content="* - поля, обязательные для заполнения" Grid.Column="1" Margin="10,188,10,0" RenderTransformOrigin="0.5,0.5" Height="24"  VerticalAlignment="Top" />
-            <Button x:Name="btnAdd" Click="AddRecord" Content="Добавить" Grid.Column="2" Margin="0,188,10,0" Background="Gray" Foreground="White" BorderBrush="Black" Height="25" VerticalAlignment="Top" HorizontalAlignment="Right" Width="80"/>
+            <Button x:Name="btnAdd" Click="AddRecord" Content="Добавить" Grid.Column="2" Margin="0,188,10,0" Background="#0060AC" Foreground="White" BorderBrush="Black" Height="25" VerticalAlignment="Top" HorizontalAlignment="Right" Width="80"/>
             <Label Content="Фото оборудования:" VerticalAlignment="Top" Margin="10,10,10,0" Height="26" HorizontalAlignment="Center" Width="140"/>
             <Label Content="Ответственный пользователь: *" Grid.Column="1" VerticalAlignment="Top" Margin="10,71,10,0" Height="26"/>
             <ComboBox x:Name="ResponsibleUser" Height="25" Grid.Column="1" Margin="10,102,10,0" VerticalAlignment="Top"/>
