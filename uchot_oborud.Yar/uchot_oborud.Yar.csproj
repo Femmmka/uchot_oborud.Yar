@@ -115,8 +115,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\ClassroomContext.cs" />
     <Compile Include="Classes\Common\CheckRegex.cs" />
     <Compile Include="Classes\Common\Connection.cs" />
+    <Compile Include="Classes\EquipmentContext.cs" />
+    <Compile Include="Classes\LoginContext.cs" />
+    <Compile Include="Classes\RolesContext.cs" />
+    <Compile Include="Classes\StatusContext.cs" />
+    <Compile Include="Classes\StoryContext.cs" />
+    <Compile Include="Classes\UsersContext.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
