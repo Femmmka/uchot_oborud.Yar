@@ -281,5 +281,23 @@
   <ItemGroup>
     <Resource Include="Image\ic.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\classroom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\equipment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\status.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\role.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

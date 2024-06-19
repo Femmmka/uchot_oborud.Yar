@@ -12,9 +12,9 @@
         <ListView x:Name="pc_story" Margin="10,10,10,40">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Старая аудитория" Width="117" DisplayMemberBinding="{Binding Code_Old}"/>
+                    <GridViewColumn Header="Прошлая аудитория" Width="117" DisplayMemberBinding="{Binding Code_Old}"/>
                     <GridViewColumn Header="Новая аудитория" Width="117" DisplayMemberBinding="{Binding Code_New}"/>
-                    <GridViewColumn Header="Бывший пользователь" Width="135" DisplayMemberBinding="{Binding User_Old}"/>
+                    <GridViewColumn Header="Прошлый пользователь" Width="135" DisplayMemberBinding="{Binding User_Old}"/>
                     <GridViewColumn Header="Новый пользователь" Width="135" DisplayMemberBinding="{Binding User_New}"/>
                     <GridViewColumn Header="Дата перемещения" Width="135" DisplayMemberBinding="{Binding Data, StringFormat=yyyy-MM-dd}"/>
                     <GridViewColumn Header="Комментарий" Width="135" DisplayMemberBinding="{Binding Comment}"/>

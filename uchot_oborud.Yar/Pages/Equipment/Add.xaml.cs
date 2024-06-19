@@ -109,7 +109,7 @@ namespace uchot_oborud.Yar.Pages.Equipment
             {
                 byte[] sss = null;
                 if (BSetImages)
-                    sss = File.ReadAllBytes(Directory.GetCurrentDirectory() + @"\Photo_equip.jpg");
+                    sss = File.ReadAllBytes(Directory.GetCurrentDirectory() + @"\P_E.jpg");
                 EquipmentContext newEquipment = new EquipmentContext(
                     0,
                     AllUsers.Find(x => x.Surname == ResponsibleUser.SelectedItem).Id,
@@ -179,10 +179,10 @@ namespace uchot_oborud.Yar.Pages.Equipment
                         NewHeight = (int)(image.Height * (256f / image.Width));
                     }
                     image.Resize(NewWidth, NewHeight);
-                    image.Save("Photo_equip.jpg");
+                    image.Save("P_E.jpg");
                 }
 
-                using (Imaging.RasterImage rasterImage = (Imaging.RasterImage)Imaging.Image.Load("Photo_equip.jpg"))
+                using (Imaging.RasterImage rasterImage = (Imaging.RasterImage)Imaging.Image.Load("P_E.jpg"))
                 {
                     if (!rasterImage.IsCached)
                     {
@@ -198,7 +198,7 @@ namespace uchot_oborud.Yar.Pages.Equipment
                         Y = (int)((rasterImage.Height - 256f) / 2);
                     Imaging.Rectangle rectangle = new Imaging.Rectangle(X, Y, Width, Height);
                     rasterImage.Crop(rectangle);
-                    rasterImage.Save("Photo_equip.jpg");
+                    rasterImage.Save("P_E.jpg");
                 }
 
                 DoubleAnimation StartAnimation = new DoubleAnimation();
@@ -207,14 +207,14 @@ namespace uchot_oborud.Yar.Pages.Equipment
                 StartAnimation.Duration = TimeSpan.FromSeconds(0.6);
                 StartAnimation.Completed += delegate
                 {
-                    Photo_equip.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + @"\Photo_equip.jpg"));
+                    P_E.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + @"\P_E.jpg"));
                     DoubleAnimation EndAnimation = new DoubleAnimation();
                     EndAnimation.From = 0;
                     EndAnimation.To = 1;
                     EndAnimation.Duration = TimeSpan.FromSeconds(1.2);
-                    Photo_equip.BeginAnimation(Image.OpacityProperty, EndAnimation);
+                    P_E.BeginAnimation(Image.OpacityProperty, EndAnimation);
                 };
-                Photo_equip.BeginAnimation(Image.OpacityProperty, StartAnimation);
+                P_E.BeginAnimation(Image.OpacityProperty, StartAnimation);
                 BSetImages = true;
             }
             else

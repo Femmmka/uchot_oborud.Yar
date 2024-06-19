@@ -42,12 +42,10 @@ namespace uchot_oborud.Yar
 
         private void OpenUsers(object sender, RoutedEventArgs e)
         {
-            //переход на страницу пользователей
             MainWindow.init.OpenPages(new Pages.Users.Main());
         }
         private void OpenClassrooms(object sender, RoutedEventArgs e)
         {
-            //переход на страницу аудиторий
             MainWindow.init.OpenPages(new Pages.Classroom.Main());
         }
         private void OpenStatus(object sender, RoutedEventArgs e)

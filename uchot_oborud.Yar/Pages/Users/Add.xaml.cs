@@ -18,21 +18,15 @@ namespace uchot_oborud.Yar.Pages.Users
 {
     public partial class Add : Page
     {
-        /// <summary> 
-        /// Данный пользователь
-        /// </summary>
         UsersContext users;
-        /// <summary> 
-        /// Получаем контекст данных для ролей
-        /// </summary>
         List<RolesContext> AllRoles = RolesContext.Select();
         public Add(UsersContext users = null)
         {
             InitializeComponent();
-            //вывод в комбобокс данных
+
             foreach (Models.Roles item in AllRoles)
                 role.Items.Add(item.roles);
-            //проверка записей для изменения(обновления) данных
+
             if (users != null)
             {
                 this.users = users;
@@ -47,56 +41,51 @@ namespace uchot_oborud.Yar.Pages.Users
                 btnAdd.Content = "Изменить";
             }
         }
-        /// <summary>
-        /// метод добавления записи
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void AddRecord(object sender, RoutedEventArgs e)
         {
-            //проверка логина
             if (login.Text == "" || !Classes.Common.CheckRegex.Match("^[А-Яа-яA-Za-z]*$", login.Text))
             {
                 MessageBox.Show("Необходимо правильно указать логин (без цифр)");
                 return;
             }
-            //проверка пароля
+
             if (Password.Password == "")
             {
                 MessageBox.Show("Необходимо указать пароль");
                 return;
             }
-            //проверка фамилии
+
             if (Surname.Text == "" || !Classes.Common.CheckRegex.Match("^[А-Яа-яA-Za-z]*$", Surname.Text))
             {
                 MessageBox.Show("Необходимо правильно указать фамилию");
                 return;
             }
-            //проверка имени
+
             if (Name.Text == "" || !Classes.Common.CheckRegex.Match("^[А-Яа-яA-Za-z]*$", Name.Text))
             {
                 MessageBox.Show("Необходимо указать имя");
                 return;
             }
-            //проверка отчества
+
             if (Patronymic.Text == "" || !Classes.Common.CheckRegex.Match("^[А-Яа-яA-Za-z]*$", Patronymic.Text))
             {
                 MessageBox.Show("Необходимо указать отчество");
                 return;
             }
-            //проверка почты
-            if (email.Text == "" || !Classes.Common.CheckRegex.Match("^((\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*)\\s*[;]{0,1}\\s*)+$", email.Text))
+
+            if (email.Text == "" || !Classes.Common.CheckRegex.Match("^((\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)\s*[;]{0,1}\s*)+$", email.Text))
             {
                 MessageBox.Show("Необходимо указать электронную почту");
                 return;
             }
-            //проверка телефона
-            if (Telephone.Text == "" || !Classes.Common.CheckRegex.Match("^((\\+7|7|8)+([0-9]){10})$", Telephone.Text))
+
+            if (Telephone.Text == "" || !Classes.Common.CheckRegex.Match("^((\+7|7|8)+([0-9]){10})$", Telephone.Text))
             {
                 MessageBox.Show("Необходимо указать номер телефона");
                 return;
             }
-            //код, отвечающий за добавление записи в БД
+
             if (users == null)
             {
                 UsersContext newUser = new UsersContext(
@@ -114,7 +103,6 @@ namespace uchot_oborud.Yar.Pages.Users
                 MessageBox.Show("Запись добавлена");
             }
             else
-            //код, отвечающий за обновление данных
             {
                 users = new UsersContext(
                     users.Id,
@@ -130,7 +118,7 @@ namespace uchot_oborud.Yar.Pages.Users
                 users.Update();
                 MessageBox.Show("Запись обновлена");
             }
-            //переход на другую страницу
+
             MainWindow.init.OpenPages(new Pages.Users.Main());
         }
     }

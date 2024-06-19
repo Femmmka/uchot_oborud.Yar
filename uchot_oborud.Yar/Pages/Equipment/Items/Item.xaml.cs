@@ -62,7 +62,7 @@ namespace uchot_oborud.Yar.Pages.Equipment.Items
                 biImg.StreamSource = ms;
                 biImg.EndInit();
                 ImageSource imgSrc = biImg;
-                Photo_equip.Source = imgSrc;
+                P_E.Source = imgSrc;
             }
             catch (Exception exp)
             {
@@ -115,7 +115,7 @@ namespace uchot_oborud.Yar.Pages.Equipment.Items
                         Y = (int)((rasterImage.Height - 256f) / 2);
                     Imaging.Rectangle rectangle = new Imaging.Rectangle(X, Y, Width, Height);
                     rasterImage.Crop(rectangle);
-                    rasterImage.Save("Photo_equip.jpg");
+                    rasterImage.Save("P_E.jpg");
                 }
                 DoubleAnimation StartAnimation = new DoubleAnimation();
                 StartAnimation.From = 1;
@@ -123,14 +123,14 @@ namespace uchot_oborud.Yar.Pages.Equipment.Items
                 StartAnimation.Duration = TimeSpan.FromSeconds(0.6);
                 StartAnimation.Completed += delegate
                 {
-                    Photo_equip.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + @"\Photo_equip.jpg"));
+                    P_E.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + @"\P_E.jpg"));
                     DoubleAnimation EndAnimation = new DoubleAnimation();
                     EndAnimation.From = 0;
                     EndAnimation.To = 1;
                     EndAnimation.Duration = TimeSpan.FromSeconds(1.2);
-                    Photo_equip.BeginAnimation(Image.OpacityProperty, EndAnimation);
+                    P_E.BeginAnimation(Image.OpacityProperty, EndAnimation);
                 };
-                Photo_equip.BeginAnimation(Image.OpacityProperty, StartAnimation);
+                P_E.BeginAnimation(Image.OpacityProperty, StartAnimation);
                 BSetImages = true;
             }
             else
